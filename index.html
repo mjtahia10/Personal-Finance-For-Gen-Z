@@ -1,66 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gen Z Finance Hub</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
-    <link rel="shortcut icon" href="Icon Gen-Z.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body class="bg-gray-50 text-gray-900 font-sans">
 
-    <!-- Navbar -->
-    <nav class="bg-blue-600 py-4">
+   
+    <nav class="bg-red-600 py-4">
         <div class="container mx-auto flex justify-between items-center text-white">
             <a href="#" class="text-xl font-semibold">Gen Z Finance Hub</a>
             <div>
                 <a href="#budgeting" class="mr-6">Budgeting</a>
                 <a href="#investing" class="mr-6">Investing</a>
                 <a href="#loans" class="mr-6">Student Loans</a>
-                <a href="#resources" class="mr-6">Resources</a>
+                <a href="#newsletter" class="mr-6">Newsletter</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="bg-blue-600 text-white text-center py-20">
+
+    <section class="bg-red-600 text-white text-center py-20">
         <h1 class="text-4xl font-bold mb-4">Welcome to Gen Z Finance Hub</h1>
         <p class="text-xl">A Resource Hub for Learning About Budgeting, Investing, Student Loans, and Financial Literacy</p>
     </section>
 
-    <!-- Budgeting Section -->
     <section id="budgeting" class="container mx-auto my-12 px-4">
         <h2 class="text-3xl font-semibold mb-6">Budgeting 101</h2>
         <p class="mb-4">Mastering your budget is the first step in financial independence. Learn how to manage your money wisely.</p>
-        <button id="budgetButton" class="bg-blue-600 text-white px-4 py-2 rounded-md">Get Budgeting Tips</button>
+        <form id="budgetForm" class="mb-6">
+            <input type="number" id="income" placeholder="Your Monthly Income" class="border p-2 mb-4 w-full" />
+            <input type="number" id="expenses" placeholder="Your Monthly Expenses" class="border p-2 mb-4 w-full" />
+            <button type="submit" class="bg-red-600 text-white px-4 py-2 rounded-md">Calculate Budget</button>
+        </form>
+        <div id="budgetResult"></div>
     </section>
 
-    <!-- Investing Section -->
     <section id="investing" class="container mx-auto my-12 px-4">
-        <h2 class="text-3xl font-semibold mb-6">Investing for Beginners</h2>
-        <p class="mb-4">Start your investment journey with small, smart moves. Explore the basics of stocks, bonds, and ETFs.</p>
-        <button id="investButton" class="bg-blue-600 text-white px-4 py-2 rounded-md">Learn How to Invest</button>
+        <h2 class="text-3xl font-semibold mb-6">Investment Simulator</h2>
+        <p class="mb-4">Try your hand at investing! Choose an asset and see how it performs over time.</p>
+        <button id="startSimulator" class="bg-red-600 text-white px-4 py-2 rounded-md">Start Investing</button>
+        <div id="portfolio"></div>
     </section>
 
-    <!-- Student Loans Section -->
+
     <section id="loans" class="container mx-auto my-12 px-4">
-        <h2 class="text-3xl font-semibold mb-6">Managing Student Loans</h2>
-        <p class="mb-4">Get tips on how to handle your student debt, pay it off, and avoid common mistakes.</p>
-        <button id="loansButton" class="bg-blue-600 text-white px-4 py-2 rounded-md">Student Loan Guide</button>
+        <h2 class="text-3xl font-semibold mb-6">Debt Repayment Planner</h2>
+        <form id="debtForm">
+            <input type="number" id="debtAmount" placeholder="Total Debt" class="border p-2 mb-4 w-full" />
+            <input type="number" id="interestRate" placeholder="Interest Rate (%)" class="border p-2 mb-4 w-full" />
+            <input type="number" id="monthlyPayment" placeholder="Monthly Payment" class="border p-2 mb-4 w-full" />
+            <button type="submit" class="bg--600 text-white px-4 py-2 rounded-md">Calculate Repayment</button>
+        </form>
+        <div id="debtResult"></div>
     </section>
 
-    <!-- Resources Section -->
-    <section id="resources" class="container mx-auto my-12 px-4">
-        <h2 class="text-3xl font-semibold mb-6">Financial Resources</h2>
-        <p class="mb-4">Check out our recommended resources, tools, and apps for managing your finances.</p>
-        <button id="resourcesButton" class="bg-blue-600 text-white px-4 py-2 rounded-md">Explore Resources</button>
+    <section id="newsletter" class="bg-red-600 text-white py-6">
+        <h2 class="text-3xl font-semibold mb-4">Stay Updated</h2>
+        <p>Subscribe to our newsletter for the latest financial tips and resources.</p>
+        <form id="newsletterForm" class="flex flex-col items-center mt-4">
+            <input type="email" id="email" placeholder="Enter your email" class="border p-2 mb-4 w-64" />
+            <button type="submit" class="bg-white text-red-600 px-6 py-2 rounded-md">Subscribe</button>
+        </form>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-blue-600 text-white py-6">
+
+    <footer class="bg-red-600 text-white py-6">
         <div class="container mx-auto text-center">
             <p>&copy; 2025 Gen Z Finance Hub. All Rights Reserved.</p>
         </div>
@@ -68,5 +76,4 @@
 
     <script src="script.js"></script>
 </body>
-
 </html>
